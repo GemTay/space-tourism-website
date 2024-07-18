@@ -13,20 +13,40 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
     <title>Space tourism website</title>
+    <script src="index.js" defer></script>
 </head>
 <body class="home-page">
-
-    <header class="primary-header">
+    <a href="#main" class="skip-to-main-content">Skip to main content</a>
+    <header class="primary-header flex">
         <div class="navigation-logo">
             <img src="./assets/shared/logo.svg" alt="space tourism logo">
         </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+                <li class="active">
+                    <a class="ff-sans-condensed uppercase text-white ls-2" href="#"><span aria-hidden="true">00</span>Home
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-condensed uppercase text-white ls-2" href="#"><span aria-hidden="true">01</span>Destination
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-condensed uppercase text-white ls-2" href="#"><span aria-hidden="true">02</span>Crew
+                    </a>
+                </li>
+                <li>
+                    <a class="ff-sans-condensed uppercase text-white ls-2" href="#"><span aria-hidden="true">03</span>Technology
+                    </a>
+                </li>
+    
+            </ul>
+        </nav>
 
-        <div class="navigation-hamburger">
-            <img src="./assets/shared/icon-hamburger.svg">
-        </div>
     </header>
 
-    <div class="grid-container grid-container--home">
+    <main id="main" class="grid-container grid-container--home">
         <div>
             <h1 class="ff-sans-condensed uppercase ls-4 fs-500 text-white fs-900">
                 So, you want to travel to<span class="display-block ff-serif uppercase fs-900 text-white">Space</span>
@@ -40,7 +60,7 @@
         <div>
             <a href="#" class="large-btn uppercase ff-serif bg-clr-white text-dark">Explore</a>
         </div>
-    </div>
+    </main>
     
 </body>
 </html>
