@@ -265,7 +265,7 @@ button {
   padding: 0 2em;
   border-radius: 50%;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.125rem;
 }
 
 .large-btn::after {
@@ -286,10 +286,17 @@ button {
   opacity: 1;
 }
 
+@media (min-width: 768px) {
+    .large-btn {
+        font-size: 2rem;
+    }
+}
+
 /* primary header & navigation */
 
 .navigation-logo {
-  margin-inline: clamp(1rem, 3.5vw, 4rem);
+    padding-block: 1.5rem;
+    margin-inline: clamp(1rem, 3.5vw, 4rem);
 }
 
 .primary-header {
