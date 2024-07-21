@@ -62,35 +62,33 @@
       </nav>
     </header>
 
-    <main id="main" class="grid-container-destination">
-        <div>
-            <p class="text-white ff-sans-condensed uppercase ls-2 fs-400 numbered-title"><span>01</span>Pick your destination</p>
-        </div>
-        <div class="destination-img">
-            <img src="./assets/destination/image-moon.webp" alt="moon">
-        </div>
+    <main id="main" class="grid-container grid-container--destination flow">
+        <h1 class="text-white ff-sans-condensed uppercase ls-2 fs-400 numbered-title"><span aria-hidden="true">01</span>Pick your destination</h1>
+
+        <img src="./assets/destination/image-moon.webp" alt="the moon">
+        
         <div class="tab-items underline-indicators flex">
             <button aria-selected="true" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2">Moon</button>
             <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2">Mars</button>
             <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2">Europa</button>
             <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2">Titan</button>
         </div>
-        <div class="grid destination-info">
-            <h1 class="ff-serif uppercase text-white fs-800">Moon</h1>
-            <p class="text-accent fs-300">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
-        </div>
-        <div class="grid destination-stats">
-            <div>
-                <p class="text-accent ff-sans-condensed ls-2 uppercase fs-200">Avg. distance</p>
-                <p class="text-white ff-serif uppercase fs-700">384,400 km</p>
-            </div>
-            <div>
-                <p class="text-accent ff-sans-condensed ls-2 uppercase fs-200">Est. travel time</p>
-                <p class="text-white ff-serif uppercase fs-700">3 days</p>
-            </div>
-        </div>
+        <article class="grid destination-info">
 
+            <h2 class="ff-serif uppercase text-white fs-800">Moon</h2>
+            <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
 
+            <div class="flex destination-stats">
+                <div>
+                    <h3 class="text-accent ff-sans-condensed ls-2 uppercase fs-200">Avg. distance</h3>
+                    <p class="text-white ff-serif uppercase fs-700">384,400 km</p>
+                </div>
+                <div>
+                    <h3 class="text-accent ff-sans-condensed ls-2 uppercase fs-200">Est. travel time</h3>
+                    <p class="text-white ff-serif uppercase fs-700">3 days</p>
+                </div>
+            </div>
+        </article>
     </main>
   </body>
 </html>
