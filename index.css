@@ -733,20 +733,20 @@ button {
 /* technology page */
 
 .grid-container--technology {
-  margin-block: 1.5rem 4rem;
+  padding: 1.5rem 1.5rem 4rem;
   grid-template-areas:
   "title"
-  "info"
-  "pagination"
-  "image";
+  "image"
+  "content";
 }
 
 .grid-container--technology > h1 {
   grid-area: title;
 }
 
-.technology-info {
-  grid-area: info;
+.technology-content {
+  grid-area: content;
+  flex-direction: column;
 }
 
 .technology-info h2 {
@@ -761,8 +761,15 @@ button {
   margin-block: 2rem;
 }
 
-.grid-container--technology > .pagination-indicators {
-  grid-area: pagination;
+.grid-container--technology .numbered-indicators {
+  justify-content: center;
+}
+
+.launch-vehicle-landscape {
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+	max-width: 100vw;
+	width: 100vw;
 }
 
 .launch-vehicle-portrait,
@@ -782,21 +789,27 @@ button {
 
 @media (min-width: 1024px) {
   .grid-container--technology {
+    padding: 1.5rem 0 4rem 0;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(1rem, 1fr);
     grid-template-areas: 
       '. title title . '
-      '. info image . '
-      '. pagination image . '
+      '. content image . '
   }
 
-  .grid-container--technology > .pagination-indicators {
-    justify-self: start;
-    gap: 2.5rem;
-    padding-bottom: 2rem;
+  .technology-content {
+    flex-direction: row;
+    gap: clamp(1rem, 5vw, 4rem);
+  }
+
+  .grid-container--technology .numbered-indicators {
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   .launch-vehicle-portrait {
     display: block;
     grid-column: span 2;
+    justify-self: end;
   }
 
   .launch-vehicle-landscape {
