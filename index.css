@@ -459,6 +459,7 @@ button {
 
 .numbered-indicators > * {
   font-family: var(--ff-serif);
+  font-size: var(--fs-500);
   color: hsl(var(--clr-white));
   padding: 0 1em;
   background-color: transparent;
@@ -476,10 +477,15 @@ button {
   background-color: hsl(var(--clr-white));
 }
 
+@media (min-width: 1024px) {
+  .numbered-indicators > * {
+    padding: 0 1.25em;
+  }
+}
+
 /* layout */
 
 .grid-container {
-  padding: 1.5rem;
   place-items: center;
   text-align: center;
   display: grid;
@@ -500,11 +506,11 @@ button {
       );
   }
 
-  .grid-container > *:first-child {
+  .grid-container--home > *:first-child {
     grid-column: 2;
   }
 
-  .grid-container > *:last-child {
+  .grid-container--home > *:last-child {
     grid-column: 3;
   }
 
@@ -695,9 +701,6 @@ button {
 }
 
 @media (min-width: 768px) {
-  /* .crew-info p:first-of-type {
-    font-size: var(--fs-600);
-  } */
 
   .grid-container--crew > h1 {
     justify-self: start;
@@ -716,10 +719,6 @@ button {
       '. pagination image . '
   }
 
-  /* .crew-info p:first-of-type {
-    font-size: var(--fs-700);
-  } */
-
   .grid-container--crew > .pagination-indicators {
     justify-self: start;
     gap: 2.5rem;
@@ -728,5 +727,79 @@ button {
 
   .grid-container--crew > img {
     max-width: 95%;
+  }
+}
+
+/* technology page */
+
+.grid-container--technology {
+  margin-block: 1.5rem 4rem;
+  grid-template-areas:
+  "title"
+  "info"
+  "pagination"
+  "image";
+}
+
+.grid-container--technology > h1 {
+  grid-area: title;
+}
+
+.technology-info {
+  grid-area: info;
+}
+
+.technology-info h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
+.technology-info p {
+  max-width: 58ch;
+}
+
+.technology-description {
+  margin-block: 2rem;
+}
+
+.grid-container--technology > .pagination-indicators {
+  grid-area: pagination;
+}
+
+.launch-vehicle-portrait,
+.launch-vehicle-landscape {
+  grid-area: image;
+}
+
+.launch-vehicle-portrait {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .grid-container--technology > h1 {
+    justify-self: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container--technology {
+    grid-template-areas: 
+      '. title title . '
+      '. info image . '
+      '. pagination image . '
+  }
+
+  .grid-container--technology > .pagination-indicators {
+    justify-self: start;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .launch-vehicle-portrait {
+    display: block;
+    grid-column: span 2;
+  }
+
+  .launch-vehicle-landscape {
+    display: none;
   }
 }

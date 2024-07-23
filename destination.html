@@ -69,13 +69,13 @@
 
         <img src="./assets/destination/image-moon.webp" alt="the moon">
         
-        <div class="tab-items underline-indicators flex">
-            <button aria-selected="true" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="moon">Moon</button>
-            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="mars">Mars</button>
-            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="europa">Europa</button>
-            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="titan">Titan</button>
+        <div class="tab-items underline-indicators flex" role="tablist" aria-label="destinations list">
+            <button aria-selected="true" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="moon" role="tab">Moon</button>
+            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="mars" role="tab">Mars</button>
+            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="europa" role="tab">Europa</button>
+            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="titan" role="tab">Titan</button>
         </div>
-        <article class="grid destination-info">
+        <article class="grid destination-info" role="tabpanel">
 
             <h2 class="ff-serif uppercase text-white fs-800">Moon</h2>
             <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>

@@ -6,9 +6,10 @@ const data = fetch('./data.json')
         tabs.forEach((tab) => {
             tab.onclick = (e) => {
                 const targetTab = e.target;
-                const selectedTab = document.querySelector(".tab-items [aria-selected='true']");
+                const selectedTab = document
+                .querySelector(".tab-items [aria-selected='true']")
+                .setAttribute("aria-selected", "false");
 
-                selectedTab.setAttribute("aria-selected", "false");
                 targetTab.setAttribute("aria-selected", "true");
 
                 document.querySelector(".grid-container--destination > img").src = json.destinations[tab.dataset.destination].images.webp;
