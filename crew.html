@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="index.css" />
     <link
       rel="icon"
-      type="image/png"
+      type="image/svg+xml"
       sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="./assets/shared/logo.svg"
     />
 
     <title>Space tourism website</title>
     <script src="index.js" defer></script>
+    <script src="navigation.js" defer></script>
     <script src="change-content.js" defer></script>
   </head>
   <body class="crew-page">
@@ -39,23 +40,29 @@
           data-visible="false"
           class="primary-navigation underline-indicators flex"
         >
-          <li class="active">
-            <a class="ff-sans-condensed uppercase text-white ls-2" href="#"
+          <li>
+            <a
+              class="ff-sans-condensed uppercase text-white ls-2"
+              href="index.html"
               ><span aria-hidden="true">00</span>Home
             </a>
           </li>
           <li>
-            <a class="ff-sans-condensed uppercase text-white ls-2" href="#"
+            <a
+              class="ff-sans-condensed uppercase text-white ls-2"
+              href="destination.html"
               ><span aria-hidden="true">01</span>Destination
             </a>
           </li>
-          <li>
-            <a class="ff-sans-condensed uppercase text-white ls-2" href="#"
+          <li class="active">
+            <a
+              class="ff-sans-condensed uppercase text-white ls-2"
+              href="crew.html"
               ><span aria-hidden="true">02</span>Crew
             </a>
           </li>
           <li>
-            <a class="ff-sans-condensed uppercase text-white ls-2" href="#"
+            <a class="ff-sans-condensed uppercase text-white ls-2" href="technology.html"
               ><span aria-hidden="true">03</span>Technology
             </a>
           </li>

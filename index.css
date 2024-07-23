@@ -61,14 +61,14 @@ button {
   --clr-accent: 231 77% 90%;
   --clr-white: 0 0% 100%;
 
-  --fs-900: clamp(5rem, 12vw + 2rem, 9rem); /* 80px */
-  --fs-800: 3.5rem; /* 56px */
-  --fs-700: 1.75rem; /* 28px */
-  --fs-600: 1.5rem; /* 24px */
-  --fs-500: 1.125rem; /* 18px */
-  --fs-400: 1rem; /* 16px */
-  --fs-300: 0.9375rem; /* 15px */
-  --fs-200: 0.875rem; /* 14px */
+  --fs-900: clamp(5rem, 12vw + 2rem, 9rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.75rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.125rem;
+  --fs-400: 1rem;
+  --fs-300: 0.9375rem;
+  --fs-200: 0.875rem;
 
   --ff-serif: "Bellefair", serif;
   --ff-sans-condensed: "Barlow Condensed", sans-serif;
@@ -77,13 +77,13 @@ button {
 
 @media (min-width: 768px) {
   :root {
-    --fs-800: 5rem; /* 56px -> 80px */
-    --fs-700: 2.5rem; /* 24px -> 40px */
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
     --fs-600: 1.75rem;
-    --fs-500: 1.5rem; /* 18px -> 24px */
-    --fs-400: 1.25rem; /* 16px -> 20px */
-    --fs-300: 1rem; /* 15px -> 16px */
-    --fs-200: 1rem; /* 14px -> 16px */
+    --fs-500: 1.5rem;
+    --fs-400: 1.25rem;
+    --fs-300: 1rem;
+    --fs-200: 1rem;
   }
 }
 
@@ -125,7 +125,6 @@ button {
 .flow--space-small {
   --flow-space: 0.75rem;
 }
-
 
 .sr-only {
   position: absolute;
@@ -265,6 +264,7 @@ button {
   border-radius: 50%;
   text-decoration: none;
   font-size: 1.125rem;
+  animation: 1.5s fadeInUp;
 }
 
 .large-btn::after {
@@ -277,6 +277,7 @@ button {
   border-radius: 50%;
   transition: transform ease-in-out 0.5s, opacity linear 0.75s;
   opacity: 0;
+  animation: pulse-bg 3s 3;
 }
 
 .large-btn:hover::after,
@@ -291,9 +292,16 @@ button {
   }
 }
 
+@media (min-width: 1024px) {
+  .large-btn {
+    animation: pulse 3s 3;
+  }
+}
+
 /* primary header & navigation */
 
 .navigation-logo {
+  min-width: 3rem;
   padding-block: 1.5rem;
   margin-inline: clamp(1rem, 3.5vw, 4rem);
 }
@@ -324,6 +332,7 @@ button {
 
 .primary-navigation a {
   text-decoration: none;
+  padding-block: 3rem;
 }
 
 .primary-navigation a > span {
@@ -344,7 +353,7 @@ button {
 
 @media (max-width: 767px) {
   .primary-navigation {
-    --gap: 2rem;
+    --gap: 3rem;
     --underline-gap: 0;
     position: fixed;
     inset: 0 0 0 30%;
@@ -434,7 +443,7 @@ button {
 }
 
 .tab-items {
-  --underline-gap: 0.5rem;
+  --underline-gap: 0.75rem;
 }
 
 .pagination-indicators > * {
@@ -446,11 +455,11 @@ button {
   cursor: pointer;
 }
 
-.pagination-indicators > *:where(:hover),
-.pagination-indicators > *:where(:focus) {
+.pagination-indicators > *:hover,
+.pagination-indicators > *:focus {
   background-color: hsl(
     var(--clr-white) / 0.5
-  ); /* investigate need for :where */
+  );
 }
 
 .pagination-indicators > [aria-selected="true"] {
@@ -468,7 +477,7 @@ button {
   aspect-ratio: 1;
 }
 
-.numbered-indicators > *:where(:hover) {
+.numbered-indicators > *:hover {
   border-color: hsl(var(--clr-white));
 }
 
@@ -490,6 +499,14 @@ button {
   text-align: center;
   display: grid;
   gap: var(--grid-container-gap, 1rem);
+  padding-block: 2.5rem;
+  padding-inline: clamp(1.5rem, 5vw, 4rem);
+}
+
+.grid-container--destination,
+.grid-container--crew,
+.grid-container--technology {
+  animation: 1.5s fadeInUp;
 }
 
 .grid-container p:not([class]) {
@@ -504,20 +521,6 @@ button {
         2rem,
         1fr
       );
-  }
-
-  .grid-container--home > *:first-child {
-    grid-column: 2;
-  }
-
-  .grid-container--home > *:last-child {
-    grid-column: 3;
-  }
-
-  .grid-container--home {
-    padding: 1.5rem clamp(1.5rem, 7vw, 5rem);
-    align-items: end;
-    padding-bottom: 6rem;
   }
 }
 
@@ -541,6 +544,12 @@ button {
   background-repeat: no-repeat;
 }
 
+.technology-page {
+  background-image: url(./assets/technology/background-technology-mobile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media (min-width: 768px) {
   .home-page {
     background-image: url(./assets/home/background-home-tablet.jpg);
@@ -552,6 +561,10 @@ button {
 
   .crew-page {
     background-image: url(./assets/crew/background-crew-tablet.jpg);
+  }
+
+  .technology-page {
+    background-image: url(./assets/technology/background-technology-tablet.jpg);
   }
 }
 
@@ -567,13 +580,16 @@ button {
   .crew-page {
     background-image: url(./assets/crew/background-crew-desktop.jpg);
   }
+
+  .technology-page {
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+  }
 }
 
 /* destination page */
 
 .grid-container--destination {
   --flow-space: 2rem;
-  padding: clamp(1.5rem, 5vw, 4rem);
   margin-bottom: 3rem;
   grid-template-areas:
     "title"
@@ -584,6 +600,7 @@ button {
 
 .grid-container--destination > h1 {
   grid-area: title;
+  margin-bottom: clamp(1rem, 5vw, 3rem);
 }
 
 .grid-container--destination > img {
@@ -593,6 +610,7 @@ button {
 
 .grid-container--destination .tab-items {
   grid-area: tabs;
+  gap: 2rem;
 }
 
 .grid-container--destination > .destination-info {
@@ -618,7 +636,6 @@ button {
 @media (min-width: 768px) {
   .grid-container--destination .numbered-title {
     justify-self: start;
-    margin-top: 2rem;
   }
 
   .destination-stats {
@@ -649,14 +666,47 @@ button {
 
 /* home page */
 
-.home-page main h1 > span {
+.home-page h1 > span {
   margin-block: 2rem;
+}
+
+.home-content {
+  animation: 1.5s fadeInDown;
+}
+
+.home-content p {
+  max-width: 58ch;
+}
+
+@media (min-width: 768px) {
+  .grid-container--home {
+    --grid-container-gap: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container--home > *:first-child {
+    grid-column: 2;
+  }
+  
+  .grid-container--home > *:last-child {
+    grid-column: 3;
+  }
+  
+  .grid-container--home {
+    padding: 1.5rem clamp(1.5rem, 7vw, 5rem);
+    align-items: end;
+    padding-bottom: 6rem;
+  }
+
+  .home-content {
+    animation: 1.5s fadeInRight;
+  }
 }
 
 /* crew page */
 
 .grid-container--crew {
-  padding: clamp(1.5rem, 5vw, 4rem);
   grid-template-areas:
   "title"
   "info"
@@ -666,6 +716,7 @@ button {
 
 .grid-container--crew > h1 {
   grid-area: title;
+  margin-bottom: clamp(1rem, 5vw, 3rem);
 }
 
 .crew-info {
@@ -710,7 +761,6 @@ button {
 }
 
 @media (min-width: 768px) {
-
   .grid-container--crew > h1 {
     justify-self: start;
   }
@@ -742,7 +792,6 @@ button {
 /* technology page */
 
 .grid-container--technology {
-  padding: 1.5rem 1.5rem 4rem;
   grid-template-areas:
   "title"
   "image"
@@ -751,11 +800,13 @@ button {
 
 .grid-container--technology > h1 {
   grid-area: title;
+  margin-bottom: clamp(1rem, 5vw, 3rem);
 }
 
 .technology-content {
   grid-area: content;
   flex-direction: column;
+  gap: clamp(1rem, 5vw, 4rem);
 }
 
 .technology-info h2 {
@@ -798,7 +849,8 @@ button {
 
 @media (min-width: 1024px) {
   .grid-container--technology {
-    padding: 1.5rem 0 4rem 0;
+    padding-inline: 0;
+    padding-bottom: 5rem;
     grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(0, 20rem) minmax(1rem, 1fr);
     grid-template-areas: 
       '. title title . '
@@ -807,7 +859,6 @@ button {
 
   .technology-content {
     flex-direction: row;
-    gap: clamp(1rem, 5vw, 4rem);
   }
 
   .grid-container--technology .numbered-indicators {
@@ -824,4 +875,81 @@ button {
   .technology-img-landscape {
     display: none;
   }
+}
+
+/* animations */
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.85);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.85);
+	}
+}
+
+@keyframes pulse-bg {
+	0% {
+		transform: scale(0.95);
+    opacity: 1;
+	}
+
+	70% {
+		transform: scale(1.5);
+    opacity: 1;
+	}
+
+	100% {
+		transform: scale(0.95);
+    opacity: 1;
+	}
 }
