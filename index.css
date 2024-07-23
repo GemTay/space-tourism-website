@@ -573,12 +573,17 @@ button {
 
 .grid-container--destination {
   --flow-space: 2rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
   margin-bottom: 3rem;
   grid-template-areas:
     "title"
     "image"
     "tabs"
     "content";
+}
+
+.grid-container--destination > h1 {
+  grid-area: title;
 }
 
 .grid-container--destination > img {
@@ -651,7 +656,7 @@ button {
 /* crew page */
 
 .grid-container--crew {
-  padding: 2.5rem 2.5rem 0 2.5rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
   grid-template-areas:
   "title"
   "info"
@@ -683,21 +688,25 @@ button {
   color: hsl(var(--clr-white) / 0.5);
 }
 
-.grid-container--crew > img {
+.crew-image-container {
   grid-area: image;
-  position: relative;
   align-self: end;
   max-width: 85%;
 }
 
-.grid-container--crew > img:after {
-  content: ""; 
-  position: absolute; 
+.crew-image-container {
+  position: relative;
+}
+
+.crew-image-container::after {
+  display: block;
+  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-  height: 40%;
+  content: "";
+  z-index: 1;
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(transparent, 85%, hsl(var(--clr-dark)));
 }
 
 @media (min-width: 768px) {
@@ -706,7 +715,7 @@ button {
     justify-self: start;
   }
 
-  .grid-container--crew > img {
+  .crew-image-container {
     max-width: 60%;
   }
 }
@@ -725,7 +734,7 @@ button {
     padding-bottom: 2rem;
   }
 
-  .grid-container--crew > img {
+  .crew-image-container {
     max-width: 95%;
   }
 }
@@ -765,19 +774,19 @@ button {
   justify-content: center;
 }
 
-.launch-vehicle-landscape {
+.technology-img-landscape {
 	margin-left: -1.5rem;
 	margin-right: -1.5rem;
 	max-width: 100vw;
 	width: 100vw;
 }
 
-.launch-vehicle-portrait,
-.launch-vehicle-landscape {
+.technology-img-portrait,
+.technology-img-landscape {
   grid-area: image;
 }
 
-.launch-vehicle-portrait {
+.technology-img-portrait {
   display: none;
 }
 
@@ -806,13 +815,13 @@ button {
     justify-content: space-evenly;
   }
 
-  .launch-vehicle-portrait {
+  .technology-img-portrait {
     display: block;
     grid-column: span 2;
     justify-self: end;
   }
 
-  .launch-vehicle-landscape {
+  .technology-img-landscape {
     display: none;
   }
 }

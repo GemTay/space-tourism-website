@@ -22,8 +22,7 @@
 
     <title>Space tourism website</title>
     <script src="index.js" defer></script>
-    <script type="module" src="destination.js" defer></script>
-    <script type="module" src="tabs.js" defer></script>
+    <script src="change-content.js" defer></script>
   </head>
   <body class="destination-page">
     <a href="#main" class="skip-to-main-content">Skip to main content</a>
@@ -65,32 +64,84 @@
     </header>
 
     <main id="main" class="grid-container grid-container--destination flow">
-        <h1 class="text-white ff-sans-condensed uppercase ls-2 fs-400 numbered-title"><span aria-hidden="true">01</span>Pick your destination</h1>
+      <h1
+        class="text-white ff-sans-condensed uppercase ls-2 fs-400 numbered-title"
+      >
+        <span aria-hidden="true">01</span>Pick your destination
+      </h1>
 
-        <img src="./assets/destination/image-moon.webp" alt="the moon">
-        
-        <div class="tab-items underline-indicators flex" role="tablist" aria-label="destinations list">
-            <button aria-selected="true" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="moon" role="tab">Moon</button>
-            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="mars" role="tab">Mars</button>
-            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="europa" role="tab">Europa</button>
-            <button aria-selected="false" class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2" data-destination="titan" role="tab">Titan</button>
+      <img src="./assets/destination/image-moon.webp" alt="the moon" />
+
+      <div
+        class="tab-items underline-indicators flex"
+        role="tablist"
+        aria-label="destinations list"
+      >
+        <button
+          aria-selected="true"
+          class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2"
+          data-destination="moon"
+          role="tab"
+        >
+          Moon
+        </button>
+        <button
+          aria-selected="false"
+          class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2"
+          data-destination="mars"
+          role="tab"
+        >
+          Mars
+        </button>
+        <button
+          aria-selected="false"
+          class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2"
+          data-destination="europa"
+          role="tab"
+        >
+          Europa
+        </button>
+        <button
+          aria-selected="false"
+          class="uppercase ff-sans-condensed text-accent bg-transparent letter-spacing-2"
+          data-destination="titan"
+          role="tab"
+        >
+          Titan
+        </button>
+      </div>
+      <article class="grid destination-info" role="tabpanel">
+        <h2 class="ff-serif uppercase text-white fs-800">Moon</h2>
+        <p>
+          See our planet as you’ve never seen it before. A perfect relaxing trip
+          away to help regain perspective and come back refreshed. While you’re
+          there, take in some history by visiting the Luna 2 and Apollo 11
+          landing sites.
+        </p>
+
+        <div class="flex destination-stats">
+          <div>
+            <h3 class="text-accent ff-sans-condensed ls-2 uppercase fs-200">
+              Avg. distance
+            </h3>
+            <p
+              class="text-white ff-serif uppercase fs-700 destination-stats--distance"
+            >
+              384,400 km
+            </p>
+          </div>
+          <div>
+            <h3 class="text-accent ff-sans-condensed ls-2 uppercase fs-200">
+              Est. travel time
+            </h3>
+            <p
+              class="text-white ff-serif uppercase fs-700 destination-stats--time"
+            >
+              3 days
+            </p>
+          </div>
         </div>
-        <article class="grid destination-info" role="tabpanel">
-
-            <h2 class="ff-serif uppercase text-white fs-800">Moon</h2>
-            <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
-
-            <div class="flex destination-stats">
-                <div>
-                    <h3 class="text-accent ff-sans-condensed ls-2 uppercase fs-200">Avg. distance</h3>
-                    <p class="text-white ff-serif uppercase fs-700 destination-stats--distance">384,400 km</p>
-                </div>
-                <div>
-                    <h3 class="text-accent ff-sans-condensed ls-2 uppercase fs-200">Est. travel time</h3>
-                    <p class="text-white ff-serif uppercase fs-700 destination-stats--time">3 days</p>
-                </div>
-            </div>
-        </article>
+      </article>
     </main>
   </body>
 </html>

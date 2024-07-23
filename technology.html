@@ -22,6 +22,7 @@
 
     <title>Space tourism website</title>
     <script src="index.js" defer></script>
+    <script src="change-content.js" defer></script>
   </head>
   <body class="technology-page">
     <a href="#main" class="skip-to-main-content">Skip to main content</a>
@@ -65,13 +66,13 @@
     <main id="main" class="grid-container grid-container--technology flow">
         <h1 class="text-white ff-sans-condensed uppercase ls-2 fs-400 numbered-title"><span aria-hidden="true">03</span>Space launch 101</h1>
 
-        <img src="./assets/technology/image-launch-vehicle-landscape.jpg" alt="Launching rocket" class="launch-vehicle-landscape">
+        <img src="./assets/technology/image-launch-vehicle-landscape.jpg" alt="Launching rocket" class="technology-img-landscape">
 
         <div class="flex technology-content">
             <div class="numbered-indicators flex">
-                <button aria-selected="true">1</button>
-                <button>2</button>
-                <button>3</button>
+                <button aria-selected="true" data-indicator="0">1</button>
+                <button data-indicator="1">2</button>
+                <button data-indicator="2">3</button>
              </div>
 
              <article class="grid technology-info flow" role="tabpanel">
@@ -86,7 +87,7 @@
             </article>
         </div>
 
-        <img src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="Launching rocket" class="launch-vehicle-portrait">
+        <img src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="Launching rocket" class="technology-img-portrait">
 
     </main>
   </body>
