@@ -691,12 +691,13 @@ button {
   
   .grid-container--home > *:last-child {
     grid-column: 3;
+    justify-self: end;
   }
   
   .grid-container--home {
     padding: 1.5rem clamp(1.5rem, 7vw, 5rem);
     align-items: end;
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
   }
 
   .home-content {
