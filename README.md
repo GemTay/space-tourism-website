@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site URL: https://gemtay.github.io/space-tourism-website/](https://gemtay.github.io/space-tourism-website/)
 
 ## My process
 
